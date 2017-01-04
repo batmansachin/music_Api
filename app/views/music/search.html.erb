@@ -10,12 +10,12 @@ Follers: <%= @artist_detail["followers"]["total"] %>
 Song_Id :<%= @song_id %>
 <br>
 <% @track_list.each do |track| %>
-<%=track["href"] %>
+<%=track["name"] %>
+<audio controls>
+  <source src=<%=track["preview_url"]%> type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio> 
+
 <br>
 
 <% end %> 
-
- <audio controls>
-  <source src="https://p.scdn.co/mp3-preview/09da2d14ee980c7295ea6354637313c166d1213a?cid=null" type="audio/mpeg">
-  Your browser does not support the audio tag.
-</audio> 
