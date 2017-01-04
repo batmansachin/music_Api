@@ -1,0 +1,21 @@
+Name: <%= @artist_detail["name"] %>
+</br>
+link: <%= link_to(@artist_detail["external_urls"]["spotify"])%>
+<br>
+Image: <%= image_tag(@artist_detail["images"].first["url"], height: @artist_detail["images"].first["height"], width: @artist_detail["images"].first["width"]) %>
+</br>
+Follers: <%= @artist_detail["followers"]["total"] %>
+<%@song_id  = @artist_detail["id"] %>
+<br>
+Song_Id :<%= @song_id %>
+<br>
+<% @track_list.each do |track| %>
+<%=track["href"] %>
+<br>
+
+<% end %> 
+
+ <audio controls>
+  <source src="https://p.scdn.co/mp3-preview/09da2d14ee980c7295ea6354637313c166d1213a?cid=null" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio> 
